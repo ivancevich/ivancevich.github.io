@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JC Ivancevich's blog</title>
+    <atom:link href="http://localhost:8080/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://localhost:8080</link>
+    <description>Web and mobile development</description>
+    <pubDate>Sun, 06 Jul 2014 21:00:00 -0300</pubDate>
+    <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>First blog post</title>
+      <link>http://localhost:8080/articles/first-blog-post/</link>
+      <pubDate>Sun, 06 Jul 2014 21:00:00 -0300</pubDate>
+      <guid isPermaLink="true">http://localhost:8080/articles/first-blog-post/</guid>
+      <author></author>
+      <description>&lt;p&gt;Hi, my name is &lt;strong&gt;JC Ivancevich&lt;/strong&gt;, I’m a software developer who lives in Buenos Aires, Argentina.&lt;/p&gt;
+&lt;p&gt;I’m 24 years old and &lt;strong&gt;extremely passionate about programming&lt;/strong&gt; stuff.&lt;/p&gt;
+&lt;p&gt;Currently, I’m working for a &lt;strong&gt;great MBaaS company&lt;/strong&gt; called &lt;strong&gt;&lt;a href=&quot;http://www.kidozen.com&quot;&gt;KidoZen&lt;/a&gt;&lt;/strong&gt;, doing a lot of &lt;code&gt;JavaScript&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I plan to post lots of interesting things here, related to &lt;strong&gt;software development&lt;/strong&gt; of course.&lt;/p&gt;
+&lt;p&gt;If you want to contact me, you can catch me on &lt;a href=&quot;https://github.com/ivancevich&quot;&gt;Github&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/ivancevich&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;http://ar.linkedin.com/in/ivancevich&quot;&gt;LinkedIn&lt;/a&gt; or &lt;a href=&quot;https://plus.google.com/+JuanCarlosIvancevich&quot;&gt;Google+&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hopefully, &lt;strong&gt;this is the beginning of something great&lt;/strong&gt; :)&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
