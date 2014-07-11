@@ -30,8 +30,9 @@
 @end
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;For Cordova users this file is placed in &lt;code&gt;project/platforms/ios/Project/Classes/AppDelegate.m&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Thanks to &lt;a href=&quot;http://machadogj.com&quot;&gt;@machadogj&lt;/a&gt; for this one!&lt;/p&gt;
+&lt;p&gt;For Cordova users this file is placed in&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;project/platforms/ios/Project/Classes/AppDelegate.m
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thanks to &lt;a href=&quot;http://machadogj.com&quot;&gt;@machadogj&lt;/a&gt; for this one!&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;android-cordova-specific-&quot;&gt;Android (Cordova specific)&lt;/h2&gt;
@@ -69,12 +70,13 @@ Once again, to avoid this you should modify a platform file. In this case the fi
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This file is placed in &lt;code&gt;project/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This file is placed in &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;project/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;That’s all.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;One thing I’d like to point at is that you should not use this solutions for production apps. This is just to test them or share them with co-workers.&lt;/p&gt;
+&lt;p&gt;One thing I’d like to point at is that &lt;strong&gt;you should not use this solutions for production apps&lt;/strong&gt;. This is just to test them or share them with co-workers.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;If you have any comment &lt;strong&gt;feel free to drop me a line&lt;/strong&gt; through the comments below.&lt;/p&gt;
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
