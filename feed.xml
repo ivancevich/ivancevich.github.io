@@ -2,17 +2,47 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JC Ivancevich's blog</title>
-    <atom:link href="http://ivancevich.github.io/feed.xml" rel="self" type="application/rss+xml"></atom:link>
-    <link>http://ivancevich.github.io</link>
-    <description>Web and mobile development</description>
-    <pubDate>Wed, 09 Jul 2014 21:00:00 -0300</pubDate>
+    <atom:link href="http://ivancevich.me/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://ivancevich.me</link>
+    <description>Futuristic Web and Mobile Development</description>
+    <pubDate>Tue, 07 Jul 2015 21:00:00 -0300</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
+      <title>More than Server-Side Rendering</title>
+      <link>http://ivancevich.me/articles/more-than-server-side-rendering/</link>
+      <pubDate>Tue, 07 Jul 2015 21:00:00 -0300</pubDate>
+      <guid isPermaLink="true">http://ivancevich.me/articles/more-than-server-side-rendering/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Server-Side rendering&lt;/strong&gt; &lt;em&gt;(SSR)&lt;/em&gt; in the world of &lt;a href=&quot;https://en.wikipedia.org/wiki/Single-page_application&quot;&gt;SPA&lt;/a&gt; frameworks is being a trendy topic these days. I think it’s been thanks to &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;, which has &lt;em&gt;SSR&lt;/em&gt; support out-of-the-box and makes it very easy, because of the &lt;a href=&quot;http://tonyfreed.com/blog/what_is_virtual_dom&quot;&gt;Virtual-DOM&lt;/a&gt;. Also, the new version of &lt;a href=&quot;http://emberjs.com/blog/2015/01/08/inside-fastboot-faking-the-dom-in-node.html&quot;&gt;Ember&lt;/a&gt; is going to support &lt;em&gt;SSR&lt;/em&gt; and even &lt;a href=&quot;https://www.reddit.com/r/angularjs/comments/2zowc4/angular_2_supports_serverside_rendering_and/&quot;&gt;Angular 2&lt;/a&gt; will have it (hopefully).&lt;/p&gt;
+&lt;h2 id=&quot;but-is-it-enough-is-it-only-about-seo-https-en-wikipedia-org-wiki-search_engine_optimization-&quot;&gt;But, is it enough? Is it only about &lt;a href=&quot;https://en.wikipedia.org/wiki/Search_engine_optimization&quot;&gt;SEO&lt;/a&gt;?&lt;/h2&gt;
+&lt;p&gt;I think &lt;strong&gt;rendering the first request on the server and then turning into a regular SPA&lt;/strong&gt; is great. &lt;strong&gt;It helps for SEO&lt;/strong&gt;: the first download has actually data and not only useless templates. &lt;strong&gt;It speeds up the perceived performance&lt;/strong&gt;: the user is able to see the content while the scripts, styles and templates are being downloaded in the background. And may be a few other things.&lt;/p&gt;
+&lt;h2 id=&quot;so-there-s-no-reason-not-to-do-ssr-but-we-can-do-better-&quot;&gt;So, there’s no reason not to do SSR. But, &lt;strong&gt;we can do better&lt;/strong&gt;.&lt;/h2&gt;
+&lt;p&gt;Let me ask a few more questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What happens if &lt;strong&gt;the scripts were not completely downloaded when the user tries to interact&lt;/strong&gt; with your shinny server-side rendered page?&lt;/li&gt;
+&lt;li&gt;Ok, they are downloaded, but if &lt;strong&gt;they explode&lt;/strong&gt;?&lt;/li&gt;
+&lt;li&gt;And if the user is a security obsessed person and has &lt;strong&gt;JS disabled&lt;/strong&gt;?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Well, there’s not much we can do with frameworks like the mentioned above &lt;em&gt;(I like to call them “&lt;strong&gt;mainstream frameworks&lt;/strong&gt;“)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;But, in fact, there’s something we can do: &lt;strong&gt;regular web apps&lt;/strong&gt; (YES! the ones with redirects and flash messages).&lt;/p&gt;
+&lt;h2 id=&quot;are-you-saying-that-we-should-go-back-to-the-90s-&quot;&gt;Are you saying that we should go back to the ‘90s?&lt;/h2&gt;
+&lt;p&gt;Not really, but we can &lt;strong&gt;build on top of that&lt;/strong&gt;. We can add &lt;strong&gt;progressive enhancements&lt;/strong&gt; features on top of regular web apps. And guess what? There’s a framework that does most of the work for you: &lt;a href=&quot;http://taunus.bevacqua.io/&quot;&gt;Taunus&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Taunus&lt;/strong&gt; allows &lt;em&gt;SSR&lt;/em&gt; plus a couple of interesting features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Works with both &lt;a href=&quot;https://github.com/taunus/taunus-express&quot;&gt;Express.js&lt;/a&gt; and &lt;a href=&quot;https://github.com/taunus/taunus-hapi&quot;&gt;Hapi.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lets you use the templating language of your choice&lt;/li&gt;
+&lt;li&gt;Makes it easy to build apps that don’t depend &lt;em&gt;(100%)&lt;/em&gt; on client-side JavaScript&lt;/li&gt;
+&lt;li&gt;Adding real-time is a cinch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;wanna-see-how-the-code-looks-like-todomvc-with-taunus-https-github-com-taunus-taunus-todomvc-&quot;&gt;Wanna see how the code looks like? &lt;a href=&quot;https://github.com/taunus/taunus-todomvc&quot;&gt;TodoMVC with Taunus&lt;/a&gt;&lt;/h2&gt;
+</description>
+    </item>
+    <item>
       <title>Ignoring invalid SSL certificates on Cordova for Android and iOS</title>
-      <link>http://ivancevich.github.io/articles/ignoring-invalid-ssl-certificates-on-cordova-android-ios/</link>
+      <link>http://ivancevich.me/articles/ignoring-invalid-ssl-certificates-on-cordova-android-ios/</link>
       <pubDate>Wed, 09 Jul 2014 21:00:00 -0300</pubDate>
-      <guid isPermaLink="true">http://ivancevich.github.io/articles/ignoring-invalid-ssl-certificates-on-cordova-android-ios/</guid>
+      <guid isPermaLink="true">http://ivancevich.me/articles/ignoring-invalid-ssl-certificates-on-cordova-android-ios/</guid>
       <author></author>
       <description>&lt;p&gt;When developing &lt;strong&gt;mobile apps&lt;/strong&gt;, it’s very common that we have to connect to web services or APIs which may be secure (https) but are still under development, so its &lt;strong&gt;SSL certificate is not valid&lt;/strong&gt; or self-signed.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -41,7 +71,7 @@ It will &lt;strong&gt;allow&lt;/strong&gt; you to make requests to services with
 On the other hand, when you would build the app in &lt;strong&gt;release mode&lt;/strong&gt; &lt;em&gt;(ie: to send the APK to a co-worker or stuff like that)&lt;/em&gt;, the Cordova Web View, which is where the HTML + CSS + JS you wrote runs, &lt;strong&gt;will not allow&lt;/strong&gt; you to make “insecure” requests.
 Once again, to avoid this you should modify a platform file. In this case the file will be &lt;code&gt;CordovaWebViewClient.java&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;You would need to modify a method in the mentioned filed, like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onReceivedSslError&lt;/span&gt;(WebView view, SslErrorHandler handler, SslError error) {
+&lt;pre&gt;&lt;code class=&quot;lang-java&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onReceivedSslError&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(WebView view, SslErrorHandler handler, SslError error)&lt;/span&gt; &lt;/span&gt;{
   &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String packageName = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.cordova.getActivity().getPackageName();
   &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; PackageManager pm = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.cordova.getActivity().getPackageManager();
 
@@ -84,9 +114,9 @@ Once again, to avoid this you should modify a platform file. In this case the fi
     </item>
     <item>
       <title>First blog post</title>
-      <link>http://ivancevich.github.io/articles/first-blog-post/</link>
+      <link>http://ivancevich.me/articles/first-blog-post/</link>
       <pubDate>Sun, 06 Jul 2014 21:00:00 -0300</pubDate>
-      <guid isPermaLink="true">http://ivancevich.github.io/articles/first-blog-post/</guid>
+      <guid isPermaLink="true">http://ivancevich.me/articles/first-blog-post/</guid>
       <author></author>
       <description>&lt;p&gt;Hi, my name is &lt;strong&gt;JC Ivancevich&lt;/strong&gt;, I’m a software developer who lives in Buenos Aires, Argentina.&lt;/p&gt;
 &lt;p&gt;I’m 24 years old and &lt;strong&gt;extremely passionate about programming&lt;/strong&gt; stuff.&lt;/p&gt;

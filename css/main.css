@@ -107,8 +107,17 @@ hr {
     text-transform: lowercase;
     text-rendering: auto;
     text-align: center;
-    font-weight: 400;
+    font-weight: lighter;
     letter-spacing: 1px;
+    margin-top: 1em;
+}
+
+.header .author > span {
+    font-weight: bold;
+}
+
+.header .author > span:hover {
+    text-decoration: underline;
 }
 
 .header .description {
@@ -118,11 +127,26 @@ hr {
     margin-top: -0.3em;
 }
 
+.header .social {
+    margin: 0 auto;
+    width: 204px;
+}
+
+.header .social > a {
+    margin: 0 10px;
+}
+
+.header .social a > img  {
+    width: 40px;
+    height: 40px;
+}
+
 body.article-detail > header h1 {
     font-size: 2.5em;
     font-style: italic;
     font-weight: 400;
     margin-bottom: -0.2em;
+    line-height: 1.2em;
 }
 
 body.article-detail > header {
@@ -449,4 +473,3 @@ code.lang-markdown .bullet {
         margin-bottom: 1em;
     }
 }
-
