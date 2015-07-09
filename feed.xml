@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JC Ivancevich's blog</title>
+    <title>JC Ivancevich</title>
     <atom:link href="http://ivancevich.me/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://ivancevich.me</link>
-    <description>Futuristic Web and Mobile Development</description>
+    <description>Futuristic Web and Mobile Development Blog</description>
     <pubDate>Wed, 09 Jul 2014 21:00:00 -0300</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
