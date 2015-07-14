@@ -70,8 +70,13 @@ Once again, to avoid this you should modify a platform file. In this case the fi
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This file is placed in &lt;/p&gt;
+&lt;p&gt;This file is placed in &lt;strong&gt;(Cordova v4 and below)&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;project/platforms/android/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&quot;-update-&quot;&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In newer versions of &lt;strong&gt;Cordova (v5 and later)&lt;/strong&gt; the file is now placed in&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;project/platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebViewClient.java
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;That’s all.&lt;/p&gt;
