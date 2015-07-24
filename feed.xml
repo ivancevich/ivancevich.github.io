@@ -84,12 +84,12 @@ taunusExpress(taunus, app, options);
 &lt;p&gt;This controller is the responsible for providing the data with which the template will be rendered. Let’s take a look at a simplified version of it:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-javascript&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; todosService = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'./todosService'&lt;/span&gt;);
 
-&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getTodosController&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(req, res, next)&lt;/span&gt; &lt;/span&gt;{
+&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getTodosController&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;req, res, next&lt;/span&gt;) &lt;/span&gt;{
   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; currentPath = req.route.path.slice(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);
 
   todosService.getAll(getAllHandler);
 
-  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getAllHandler&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(err, todos)&lt;/span&gt; &lt;/span&gt;{
+  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getAllHandler&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, todos&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) { &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; next(err); }
 
     &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; viewModel = {
@@ -142,10 +142,10 @@ Well, the template will be placed in &lt;code&gt;views/todos/index.html&lt;/code
 
 app.post(&lt;span class=&quot;string&quot;&gt;'/form/todo'&lt;/span&gt;, createTodo);
 
-&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;createTodo&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(req, res, next)&lt;/span&gt; &lt;/span&gt;{
+&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;createTodo&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;req, res, next&lt;/span&gt;) &lt;/span&gt;{
   todosService.add(req.body, addHandler);
 
-  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addHandler&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(err, todo)&lt;/span&gt; &lt;/span&gt;{
+  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addHandler&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, todo&lt;/span&gt;) &lt;/span&gt;{
     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) { &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; next(err); }
 
     &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; referer = url.parse(req.headers.referer).path;
@@ -205,11 +205,11 @@ taunus.mount(main, wiring);
 
 &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; $ = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;'dominus'&lt;/span&gt;);
 
-&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(viewModel, container, route)&lt;/span&gt; &lt;/span&gt;{
+&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;viewModel, container, route&lt;/span&gt;) &lt;/span&gt;{
   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; btn = $(&lt;span class=&quot;string&quot;&gt;'.btn'&lt;/span&gt;, container);
   btn.on(&lt;span class=&quot;string&quot;&gt;'click'&lt;/span&gt;, onBtnClick);
 
-  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onBtnClick&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(event)&lt;/span&gt; &lt;/span&gt;{
+  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onBtnClick&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;event&lt;/span&gt;) &lt;/span&gt;{
     alert(&lt;span class=&quot;string&quot;&gt;'Button clicked!'&lt;/span&gt;);
   });
 };

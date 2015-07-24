@@ -92,12 +92,12 @@ taunusExpress(taunus, app, options);
 <p>This controller is the responsible for providing the data with which the template will be rendered. Let’s take a look at a simplified version of&nbsp;it:</p>
 <pre><code class="lang-javascript"><span class="keyword">var</span> todosService = <span class="built_in">require</span>(<span class="string">'./todosService'</span>);
 
-<span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">getTodosController</span> <span class="params">(req, res, next)</span> </span>{
+<span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">getTodosController</span> (<span class="params">req, res, next</span>) </span>{
   <span class="keyword">var</span> currentPath = req.route.path.slice(<span class="number">1</span>);
 
   todosService.getAll(getAllHandler);
 
-  <span class="function"><span class="keyword">function</span> <span class="title">getAllHandler</span> <span class="params">(err, todos)</span> </span>{
+  <span class="function"><span class="keyword">function</span> <span class="title">getAllHandler</span> (<span class="params">err, todos</span>) </span>{
     <span class="keyword">if</span> (err) { <span class="keyword">return</span> next(err); }
 
     <span class="keyword">var</span> viewModel = {
@@ -150,10 +150,10 @@ Well, the template will be placed in <code>views/todos/index.html</code> then. S
 
 app.post(<span class="string">'/form/todo'</span>, createTodo);
 
-<span class="function"><span class="keyword">function</span> <span class="title">createTodo</span> <span class="params">(req, res, next)</span> </span>{
+<span class="function"><span class="keyword">function</span> <span class="title">createTodo</span> (<span class="params">req, res, next</span>) </span>{
   todosService.add(req.body, addHandler);
 
-  <span class="function"><span class="keyword">function</span> <span class="title">addHandler</span> <span class="params">(err, todo)</span> </span>{
+  <span class="function"><span class="keyword">function</span> <span class="title">addHandler</span> (<span class="params">err, todo</span>) </span>{
     <span class="keyword">if</span> (err) { <span class="keyword">return</span> next(err); }
 
     <span class="keyword">var</span> referer = url.parse(req.headers.referer).path;
@@ -213,11 +213,11 @@ taunus.mount(main, wiring);
 
 <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'dominus'</span>);
 
-<span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="params">(viewModel, container, route)</span> </span>{
+<span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">viewModel, container, route</span>) </span>{
   <span class="keyword">var</span> btn = $(<span class="string">'.btn'</span>, container);
   btn.on(<span class="string">'click'</span>, onBtnClick);
 
-  <span class="function"><span class="keyword">function</span> <span class="title">onBtnClick</span> <span class="params">(event)</span> </span>{
+  <span class="function"><span class="keyword">function</span> <span class="title">onBtnClick</span> (<span class="params">event</span>) </span>{
     alert(<span class="string">'Button clicked!'</span>);
   });
 };
