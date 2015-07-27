@@ -1,7 +1,1 @@
-/* print */
-
-@media print {
-  .social {
-    display: none;
-  }
-}
+@media print{.social{display:none}}
